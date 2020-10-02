@@ -16,7 +16,7 @@ import java.time.Instant;
  * Spring Data MongoDB repository for the {@link User} entity.
  */
 @Repository
-public interface UserRepository extends MongoRepository<User, String> {
+public interface UserRepository extends MongoRepository<User, String>, UserRepositoryCustom {
 
     String USERS_BY_LOGIN_CACHE = "usersByLogin";
 
@@ -35,4 +35,9 @@ public interface UserRepository extends MongoRepository<User, String> {
     Optional<User> findOneByLogin(String login);
 
     Page<User> findAllByLoginNot(Pageable pageable, String login);
+
+    List<User> findByEmail(String email);
+
+    List<User> findByTicket(String ticket);
+
 }

@@ -1,5 +1,7 @@
 package com.okme.fam.security.jwt;
 
+import com.okme.fam.config.ApplicationProperties;
+import com.okme.fam.repository.UserRepository;
 import com.okme.fam.security.AuthoritiesConstants;
 import io.github.jhipster.config.JHipsterProperties;
 import io.jsonwebtoken.io.Decoders;
@@ -12,6 +14,7 @@ import org.springframework.mock.web.MockFilterChain;
 import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.test.util.ReflectionTestUtils;
@@ -26,16 +29,22 @@ public class JWTFilterTest {
 
     private JWTFilter jwtFilter;
 
+    private AuthenticationManagerBuilder authenticationManagerBuilder;
+
+    private UserRepository userRepository;
+
+    private ApplicationProperties applicationProperties;
+
     @BeforeEach
     public void setup() {
         JHipsterProperties jHipsterProperties = new JHipsterProperties();
-        tokenProvider = new TokenProvider(jHipsterProperties);
+//        tokenProvider = new TokenProvider(jHipsterProperties, authenticationManagerBuilder, userRepository, applicationProperties);
         ReflectionTestUtils.setField(tokenProvider, "key",
             Keys.hmacShaKeyFor(Decoders.BASE64
                 .decode("fd54a45s65fds737b9aafcb3412e07ed99b267f33413274720ddbb7f6c5e64e9f14075f2d7ed041592f0b7657baf8")));
 
         ReflectionTestUtils.setField(tokenProvider, "tokenValidityInMilliseconds", 60000);
-        jwtFilter = new JWTFilter(tokenProvider);
+        jwtFilter = new JWTFilter(tokenProvider, applicationProperties);
         SecurityContextHolder.getContext().setAuthentication(null);
     }
 

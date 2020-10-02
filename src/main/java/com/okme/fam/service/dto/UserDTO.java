@@ -4,6 +4,7 @@ import com.okme.fam.config.Constants;
 
 import com.okme.fam.domain.Authority;
 import com.okme.fam.domain.User;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 import javax.validation.constraints.*;
 import java.time.Instant;
@@ -50,6 +51,10 @@ public class UserDTO {
 
     private Set<String> authorities;
 
+    private String ticket;
+
+    private String jwt;
+
     public UserDTO() {
         // Empty constructor needed for Jackson.
     }
@@ -70,6 +75,24 @@ public class UserDTO {
         this.authorities = user.getAuthorities().stream()
             .map(Authority::getName)
             .collect(Collectors.toSet());
+        this.ticket = user.getTicket();
+        this.jwt = user.getJwt();
+    }
+
+    public String getTicket() {
+        return ticket;
+    }
+
+    public void setTicket(String ticket) {
+        this.ticket = ticket;
+    }
+
+    public String getJwt() {
+        return jwt;
+    }
+
+    public void setJwt(String jwt) {
+        this.jwt = jwt;
     }
 
     public String getId() {

@@ -1,5 +1,6 @@
 package com.okme.fam.security.jwt;
 
+import com.okme.fam.config.ApplicationProperties;
 import org.springframework.security.config.annotation.SecurityConfigurerAdapter;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.web.DefaultSecurityFilterChain;
@@ -9,13 +10,16 @@ public class JWTConfigurer extends SecurityConfigurerAdapter<DefaultSecurityFilt
 
     private final TokenProvider tokenProvider;
 
-    public JWTConfigurer(TokenProvider tokenProvider) {
+    private final ApplicationProperties applicationProperties;
+
+    public JWTConfigurer(TokenProvider tokenProvider, ApplicationProperties applicationProperties) {
         this.tokenProvider = tokenProvider;
+        this.applicationProperties = applicationProperties;
     }
 
     @Override
     public void configure(HttpSecurity http) {
-        JWTFilter customFilter = new JWTFilter(tokenProvider);
+        JWTFilter customFilter = new JWTFilter(tokenProvider, applicationProperties);
         http.addFilterBefore(customFilter, UsernamePasswordAuthenticationFilter.class);
     }
 }

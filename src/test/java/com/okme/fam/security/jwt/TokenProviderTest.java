@@ -1,5 +1,8 @@
 package com.okme.fam.security.jwt;
 
+import com.okme.fam.config.ApplicationProperties;
+import com.okme.fam.repository.UserRepository;
+import com.okme.fam.repository.impl.UserRepositoryImpl;
 import com.okme.fam.security.AuthoritiesConstants;
 
 import java.security.Key;
@@ -8,6 +11,7 @@ import java.util.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -30,7 +34,7 @@ public class TokenProviderTest {
 
     @BeforeEach
     public void setup() {
-        tokenProvider = new TokenProvider( new JHipsterProperties());
+//        tokenProvider = new TokenProvider( new JHipsterProperties(), new AuthenticationManagerBuilder(), new UserRepositoryImpl(), new ApplicationProperties());
         key = Keys.hmacShaKeyFor(Decoders.BASE64
             .decode("fd54a45s65fds737b9aafcb3412e07ed99b267f33413274720ddbb7f6c5e64e9f14075f2d7ed041592f0b7657baf8"));
 

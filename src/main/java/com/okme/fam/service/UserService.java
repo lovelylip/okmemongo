@@ -9,6 +9,8 @@ import com.okme.fam.security.AuthoritiesConstants;
 import com.okme.fam.security.SecurityUtils;
 import com.okme.fam.service.dto.UserDTO;
 
+import com.okme.fam.service.mapper.DmDonViMapper;
+import com.okme.fam.service.mapper.UserMapper;
 import io.github.jhipster.security.RandomUtil;
 
 import org.slf4j.Logger;
@@ -41,11 +43,14 @@ public class UserService {
 
     private final CacheManager cacheManager;
 
-    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder, AuthorityRepository authorityRepository, CacheManager cacheManager) {
+    private final UserMapper userMapper;
+
+    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder, AuthorityRepository authorityRepository, CacheManager cacheManager, UserMapper userMapper) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
         this.authorityRepository = authorityRepository;
         this.cacheManager = cacheManager;
+        this.userMapper = userMapper;
     }
 
     public Optional<User> activateRegistration(String key) {
@@ -275,13 +280,13 @@ public class UserService {
      */
     @Scheduled(cron = "0 0 1 * * ?")
     public void removeNotActivatedUsers() {
-        userRepository
+        /*userRepository
             .findAllByActivatedIsFalseAndActivationKeyIsNotNullAndCreatedDateBefore(Instant.now().minus(3, ChronoUnit.DAYS))
             .forEach(user -> {
                 log.debug("Deleting not activated user {}", user.getLogin());
                 userRepository.delete(user);
                 this.clearUserCaches(user);
-            });
+            });*/
     }
 
     /**
@@ -298,5 +303,15 @@ public class UserService {
         if (user.getEmail() != null) {
             Objects.requireNonNull(cacheManager.getCache(UserRepository.USERS_BY_EMAIL_CACHE)).evict(user.getEmail());
         }
+    }
+
+    public List<UserDTO> findUserByEmail(String email){
+        List<User> listUsers = userRepository.findByEmail(email);
+        return userMapper.usersToUserDTOs(listUsers);
+    }
+
+    public List<UserDTO> findUserByTicket(String ticket){
+        List<User> listUsers = userRepository.findByTicket(ticket);
+        return userMapper.usersToUserDTOs(listUsers);
     }
 }

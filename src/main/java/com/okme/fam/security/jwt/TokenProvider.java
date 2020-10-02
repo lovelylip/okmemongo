@@ -5,13 +5,22 @@ import java.security.Key;
 import java.util.*;
 import java.util.stream.Collectors;
 import javax.annotation.PostConstruct;
+import javax.servlet.http.Cookie;
 
+import com.okme.fam.config.ApplicationProperties;
+import com.okme.fam.repository.UserRepository;
+import com.okme.fam.security.SecurityUtils;
+import com.okme.fam.service.dto.UserDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
@@ -20,6 +29,7 @@ import io.github.jhipster.config.JHipsterProperties;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
+import org.springframework.web.client.RestTemplate;
 
 @Component
 public class TokenProvider {
@@ -36,8 +46,18 @@ public class TokenProvider {
 
     private final JHipsterProperties jHipsterProperties;
 
-    public TokenProvider(JHipsterProperties jHipsterProperties) {
+    private final AuthenticationManagerBuilder authenticationManagerBuilder;
+
+    private final UserRepository userRepository;
+
+    private final ApplicationProperties applicationProperties;
+
+    public TokenProvider(JHipsterProperties jHipsterProperties, AuthenticationManagerBuilder authenticationManagerBuilder,
+                         UserRepository userRepository, ApplicationProperties applicationProperties) {
         this.jHipsterProperties = jHipsterProperties;
+        this.authenticationManagerBuilder = authenticationManagerBuilder;
+        this.userRepository = userRepository;
+        this.applicationProperties = applicationProperties;
     }
 
     @PostConstruct
@@ -107,5 +127,23 @@ public class TokenProvider {
             log.trace("Invalid JWT token trace.", e);
         }
         return false;
+    }
+
+    public String authenByTicketFromCas(String ticket, String ipHost) {
+        Map<String, String> mapResult = SecurityUtils.getEmailFromIAM(applicationProperties.getUrlSSO(), ipHost, ticket);
+        String email = mapResult.get("email");
+
+        RestTemplate restTemplate = new RestTemplate();
+        UserDTO userDTO = new UserDTO();
+        userDTO.setEmail(email);
+        ResponseEntity<UserDTO> responseEntity = restTemplate.postForEntity(ipHost + "/api/public/findUserByEmail", userDTO, UserDTO.class);
+        UserDTO userDTO1 = responseEntity.getBody();
+
+        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(userDTO1.getLogin(), "admin");
+        Authentication authentication = authenticationManagerBuilder.getObject().authenticate(authenticationToken);
+        SecurityContextHolder.getContext().setAuthentication(authentication);
+        String jwt = createToken(authentication, false);
+        userRepository.saveTicket(ticket, userDTO1.getLogin(), jwt);
+        return jwt;
     }
 }
