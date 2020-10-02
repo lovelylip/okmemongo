@@ -1,0 +1,46 @@
+<div class="row justify-content-center" (contextmenu)="__elementSelectionService.select('661814102',$event)" [ngStyle]="__elementSelectionService.getStyles('661814102')"(click)='__elementSelectionService.clear()'>
+    <div class="col-8" (contextmenu)="__elementSelectionService.select('1350298660',$event)" [ngStyle]="__elementSelectionService.getStyles('1350298660')">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm" (contextmenu)="__elementSelectionService.select('1684506038',$event)" [ngStyle]="__elementSelectionService.getStyles('1684506038')">
+            <h2 id="jhi-dm-cqbh-heading" jhiTranslate="okmeApp.dmCqbh.home.createOrEditLabel" (contextmenu)="__elementSelectionService.select('1932751513',$event)" [ngStyle]="__elementSelectionService.getStyles('1932751513')">Create or edit a Dm Cqbh</h2>
+
+            <div (contextmenu)="__elementSelectionService.select('617890860',$event)" [ngStyle]="__elementSelectionService.getStyles('617890860')">
+                <jhi-alert-error (contextmenu)="__elementSelectionService.select('725718622',$event)" [ngStyle]="__elementSelectionService.getStyles('725718622')"></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value" (contextmenu)="__elementSelectionService.select('1943272629',$event)" [ngStyle]="__elementSelectionService.getStyles('1943272629')">
+                    <label for="id" jhiTranslate="global.field.id" (contextmenu)="__elementSelectionService.select('454881260',$event)" [ngStyle]="__elementSelectionService.getStyles('454881260')">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly (contextmenu)="__elementSelectionService.select('493829511',$event)" [ngStyle]="__elementSelectionService.getStyles('493829511')">
+                </div>
+
+                <div class="form-group" (contextmenu)="__elementSelectionService.select('976993042',$event)" [ngStyle]="__elementSelectionService.getStyles('976993042')">
+                    <label class="form-control-label" jhiTranslate="okmeApp.dmCqbh.ma" for="field_ma" (contextmenu)="__elementSelectionService.select('1457643188',$event)" [ngStyle]="__elementSelectionService.getStyles('1457643188')">Ma</label>
+                    <input type="text" class="form-control" name="ma" id="field_ma" formControlName="ma" (contextmenu)="__elementSelectionService.select('712910859',$event)" [ngStyle]="__elementSelectionService.getStyles('712910859')">
+                    <div *ngIf="editForm.get('ma')!.invalid &#38;&#38; (editForm.get('ma')!.dirty || editForm.get('ma')!.touched)" (contextmenu)="__elementSelectionService.select('1310305222',$event)" [ngStyle]="__elementSelectionService.getStyles('1310305222')">
+                        <small class="form-text text-danger" *ngIf="editForm.get('ma')?.errors?.required" jhiTranslate="entity.validation.required" (contextmenu)="__elementSelectionService.select('689797692',$event)" [ngStyle]="__elementSelectionService.getStyles('689797692')">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group" (contextmenu)="__elementSelectionService.select('1909528021',$event)" [ngStyle]="__elementSelectionService.getStyles('1909528021')">
+                    <label class="form-control-label" jhiTranslate="okmeApp.dmCqbh.ten" for="field_ten" (contextmenu)="__elementSelectionService.select('708068756',$event)" [ngStyle]="__elementSelectionService.getStyles('708068756')">Ma</label>
+                    <input type="text" class="form-control" name="ten" id="field_ten" formControlName="ten" (contextmenu)="__elementSelectionService.select('695245967',$event)" [ngStyle]="__elementSelectionService.getStyles('695245967')">
+                    <div *ngIf="editForm.get('ten')!.invalid &#38;&#38; (editForm.get('ten')!.dirty || editForm.get('ten')!.touched)" (contextmenu)="__elementSelectionService.select('1803472647',$event)" [ngStyle]="__elementSelectionService.getStyles('1803472647')">
+                        <small class="form-text text-danger" *ngIf="editForm.get('ten')?.errors?.required" jhiTranslate="entity.validation.required" (contextmenu)="__elementSelectionService.select('309858304',$event)" [ngStyle]="__elementSelectionService.getStyles('309858304')">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+            </div>
+
+            <div (contextmenu)="__elementSelectionService.select('451477310',$event)" [ngStyle]="__elementSelectionService.getStyles('451477310')">
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()" (contextmenu)="__elementSelectionService.select('936479752',$event)" [ngStyle]="__elementSelectionService.getStyles('936479752')">
+                    <fa-icon icon="ban" (contextmenu)="__elementSelectionService.select('717908738',$event)" [ngStyle]="__elementSelectionService.getStyles('717908738')"></fa-icon>&#160;<span jhiTranslate="entity.action.cancel" (contextmenu)="__elementSelectionService.select('2019595851',$event)" [ngStyle]="__elementSelectionService.getStyles('2019595851')">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary" (contextmenu)="__elementSelectionService.select('623679350',$event)" [ngStyle]="__elementSelectionService.getStyles('623679350')">
+                    <fa-icon icon="save" (contextmenu)="__elementSelectionService.select('514260503',$event)" [ngStyle]="__elementSelectionService.getStyles('514260503')"></fa-icon>&#160;<span jhiTranslate="entity.action.save" (contextmenu)="__elementSelectionService.select('1741489338',$event)" [ngStyle]="__elementSelectionService.getStyles('1741489338')">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

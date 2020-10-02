@@ -1,0 +1,68 @@
+<div (contextmenu)="__elementSelectionService.select('1850472768',$event)" [ngStyle]="__elementSelectionService.getStyles('1850472768')"(click)='__elementSelectionService.clear()'>
+    <h2 id="page-heading" (contextmenu)="__elementSelectionService.select('1798995963',$event)" [ngStyle]="__elementSelectionService.getStyles('1798995963')">
+        <span jhiTranslate="okmeApp.dmCqbh.home.title" (contextmenu)="__elementSelectionService.select('1510611493',$event)" [ngStyle]="__elementSelectionService.getStyles('1510611493')">Dm Cqbhs</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-dm-cqbh" [routerLink]="['/dm-cqbh/new']" (contextmenu)="__elementSelectionService.select('1638733927',$event)" [ngStyle]="__elementSelectionService.getStyles('1638733927')">
+            <fa-icon icon="plus" (contextmenu)="__elementSelectionService.select('939465606',$event)" [ngStyle]="__elementSelectionService.getStyles('939465606')"></fa-icon>
+            <span jhiTranslate="okmeApp.dmCqbh.home.createLabel" (contextmenu)="__elementSelectionService.select('251817765',$event)" [ngStyle]="__elementSelectionService.getStyles('251817765')">
+            Create a new Dm Cqbh
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error (contextmenu)="__elementSelectionService.select('97753042',$event)" [ngStyle]="__elementSelectionService.getStyles('97753042')"></jhi-alert-error>
+
+    <jhi-alert (contextmenu)="__elementSelectionService.select('213174575',$event)" [ngStyle]="__elementSelectionService.getStyles('213174575')"></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="dmCqbhs?.length === 0" (contextmenu)="__elementSelectionService.select('1138282516',$event)" [ngStyle]="__elementSelectionService.getStyles('1138282516')">
+        <span jhiTranslate="okmeApp.dmCqbh.home.notFound" (contextmenu)="__elementSelectionService.select('1598026765',$event)" [ngStyle]="__elementSelectionService.getStyles('1598026765')">No dmCqbhs found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="dmCqbhs &#38;&#38; dmCqbhs.length &#62; 0" (contextmenu)="__elementSelectionService.select('1179358527',$event)" [ngStyle]="__elementSelectionService.getStyles('1179358527')">
+        <table class="table table-striped" aria-describedby="page-heading" (contextmenu)="__elementSelectionService.select('1822216552',$event)" [ngStyle]="__elementSelectionService.getStyles('1822216552')">
+            <thead (contextmenu)="__elementSelectionService.select('1774318751',$event)" [ngStyle]="__elementSelectionService.getStyles('1774318751')">
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)" (contextmenu)="__elementSelectionService.select('1241446966',$event)" [ngStyle]="__elementSelectionService.getStyles('1241446966')">
+                    <th scope="col" jhiSortBy="id" (contextmenu)="__elementSelectionService.select('1392929883',$event)" [ngStyle]="__elementSelectionService.getStyles('1392929883')"><span jhiTranslate="global.field.id" (contextmenu)="__elementSelectionService.select('1503391938',$event)" [ngStyle]="__elementSelectionService.getStyles('1503391938')">ID</span> <fa-icon icon="sort" (contextmenu)="__elementSelectionService.select('1066963554',$event)" [ngStyle]="__elementSelectionService.getStyles('1066963554')"></fa-icon></th>
+                    <th scope="col" jhiSortBy="ma" (contextmenu)="__elementSelectionService.select('25817325',$event)" [ngStyle]="__elementSelectionService.getStyles('25817325')"><span jhiTranslate="okmeApp.dmCqbh.ma" (contextmenu)="__elementSelectionService.select('1628250163',$event)" [ngStyle]="__elementSelectionService.getStyles('1628250163')">Ma</span> <fa-icon icon="sort" (contextmenu)="__elementSelectionService.select('1737933104',$event)" [ngStyle]="__elementSelectionService.getStyles('1737933104')"></fa-icon></th>
+                    <th scope="col" jhiSortBy="ten" (contextmenu)="__elementSelectionService.select('476464162',$event)" [ngStyle]="__elementSelectionService.getStyles('476464162')"><span jhiTranslate="okmeApp.dmCqbh.ten" (contextmenu)="__elementSelectionService.select('1378271707',$event)" [ngStyle]="__elementSelectionService.getStyles('1378271707')">Ma</span> <fa-icon icon="sort" (contextmenu)="__elementSelectionService.select('1520594708',$event)" [ngStyle]="__elementSelectionService.getStyles('1520594708')"></fa-icon></th>
+                    <th scope="col" (contextmenu)="__elementSelectionService.select('200063537',$event)" [ngStyle]="__elementSelectionService.getStyles('200063537')"></th>
+                </tr>
+            </thead>
+            <tbody (contextmenu)="__elementSelectionService.select('621131834',$event)" [ngStyle]="__elementSelectionService.getStyles('621131834')">
+                <tr *ngFor="let dmCqbh of dmCqbhs ;trackBy: trackId" (contextmenu)="__elementSelectionService.select('1103727960',$event)" [ngStyle]="__elementSelectionService.getStyles('1103727960')">
+                    <td (contextmenu)="__elementSelectionService.select('140148922',$event)" [ngStyle]="__elementSelectionService.getStyles('140148922')"><a [routerLink]="['/dm-cqbh', dmCqbh.id, 'view']" (contextmenu)="__elementSelectionService.select('1720295090',$event)" [ngStyle]="__elementSelectionService.getStyles('1720295090')">{{ dmCqbh.id }}</a></td>
+                    <td (contextmenu)="__elementSelectionService.select('1850031665',$event)" [ngStyle]="__elementSelectionService.getStyles('1850031665')">{{ dmCqbh.ma }}</td>
+                    <td (contextmenu)="__elementSelectionService.select('1668013548',$event)" [ngStyle]="__elementSelectionService.getStyles('1668013548')">{{ dmCqbh.ten }}</td>
+                    <td class="text-right" (contextmenu)="__elementSelectionService.select('1063833195',$event)" [ngStyle]="__elementSelectionService.getStyles('1063833195')">
+                        <div class="btn-group" (contextmenu)="__elementSelectionService.select('356428602',$event)" [ngStyle]="__elementSelectionService.getStyles('356428602')">
+                            <button type="submit" [routerLink]="['/dm-cqbh', dmCqbh.id, 'view']" class="btn btn-info btn-sm" (contextmenu)="__elementSelectionService.select('1389214490',$event)" [ngStyle]="__elementSelectionService.getStyles('1389214490')">
+                                <fa-icon icon="eye" (contextmenu)="__elementSelectionService.select('1878300690',$event)" [ngStyle]="__elementSelectionService.getStyles('1878300690')"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view" (contextmenu)="__elementSelectionService.select('370546705',$event)" [ngStyle]="__elementSelectionService.getStyles('370546705')">View</span>
+                            </button>
+
+                            <button type="submit" [routerLink]="['/dm-cqbh', dmCqbh.id, 'edit']" class="btn btn-primary btn-sm" (contextmenu)="__elementSelectionService.select('1980831378',$event)" [ngStyle]="__elementSelectionService.getStyles('1980831378')">
+                                <fa-icon icon="pencil-alt" (contextmenu)="__elementSelectionService.select('1237022241',$event)" [ngStyle]="__elementSelectionService.getStyles('1237022241')"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit" (contextmenu)="__elementSelectionService.select('38028044',$event)" [ngStyle]="__elementSelectionService.getStyles('38028044')">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(dmCqbh)" class="btn btn-danger btn-sm" (contextmenu)="__elementSelectionService.select('615781829',$event)" [ngStyle]="__elementSelectionService.getStyles('615781829')">
+                                <fa-icon icon="times" (contextmenu)="__elementSelectionService.select('1517232711',$event)" [ngStyle]="__elementSelectionService.getStyles('1517232711')"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete" (contextmenu)="__elementSelectionService.select('1224166741',$event)" [ngStyle]="__elementSelectionService.getStyles('1224166741')">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="dmCqbhs &#38;&#38; dmCqbhs.length &#62; 0" (contextmenu)="__elementSelectionService.select('1745566564',$event)" [ngStyle]="__elementSelectionService.getStyles('1745566564')">
+        <div class="row justify-content-center" (contextmenu)="__elementSelectionService.select('1813315997',$event)" [ngStyle]="__elementSelectionService.getStyles('1813315997')">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage" (contextmenu)="__elementSelectionService.select('1338735426',$event)" [ngStyle]="__elementSelectionService.getStyles('1338735426')"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center" (contextmenu)="__elementSelectionService.select('1034160651',$event)" [ngStyle]="__elementSelectionService.getStyles('1034160651')">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)" (contextmenu)="__elementSelectionService.select('214292160',$event)" [ngStyle]="__elementSelectionService.getStyles('214292160')"></ngb-pagination>
+        </div>
+    </div>
+</div>

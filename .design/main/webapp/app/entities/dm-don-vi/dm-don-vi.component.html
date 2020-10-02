@@ -1,0 +1,66 @@
+<div (contextmenu)="__elementSelectionService.select('1510921812',$event)" [ngStyle]="__elementSelectionService.getStyles('1510921812')"(click)='__elementSelectionService.clear()'>
+    <h2 id="page-heading" (contextmenu)="__elementSelectionService.select('1905998124',$event)" [ngStyle]="__elementSelectionService.getStyles('1905998124')">
+        <span jhiTranslate="okmeApp.dmDonVi.home.title" (contextmenu)="__elementSelectionService.select('1569451325',$event)" [ngStyle]="__elementSelectionService.getStyles('1569451325')">Dm Don Vis</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-dm-don-vi" [routerLink]="['/dm-don-vi/new']" (contextmenu)="__elementSelectionService.select('956310980',$event)" [ngStyle]="__elementSelectionService.getStyles('956310980')">
+            <fa-icon icon="plus" (contextmenu)="__elementSelectionService.select('2046022185',$event)" [ngStyle]="__elementSelectionService.getStyles('2046022185')"></fa-icon>
+            <span jhiTranslate="okmeApp.dmDonVi.home.createLabel" (contextmenu)="__elementSelectionService.select('1367987810',$event)" [ngStyle]="__elementSelectionService.getStyles('1367987810')">
+            Create a new Dm Don Vi
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error (contextmenu)="__elementSelectionService.select('1399405419',$event)" [ngStyle]="__elementSelectionService.getStyles('1399405419')"></jhi-alert-error>
+
+    <jhi-alert (contextmenu)="__elementSelectionService.select('1803492039',$event)" [ngStyle]="__elementSelectionService.getStyles('1803492039')"></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="dmDonVis?.length === 0" (contextmenu)="__elementSelectionService.select('217771803',$event)" [ngStyle]="__elementSelectionService.getStyles('217771803')">
+        <span jhiTranslate="okmeApp.dmDonVi.home.notFound" (contextmenu)="__elementSelectionService.select('333382176',$event)" [ngStyle]="__elementSelectionService.getStyles('333382176')">No dmDonVis found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="dmDonVis &#38;&#38; dmDonVis.length &#62; 0" (contextmenu)="__elementSelectionService.select('158843219',$event)" [ngStyle]="__elementSelectionService.getStyles('158843219')">
+        <table class="table table-striped" aria-describedby="page-heading" (contextmenu)="__elementSelectionService.select('441277336',$event)" [ngStyle]="__elementSelectionService.getStyles('441277336')">
+            <thead (contextmenu)="__elementSelectionService.select('1100279293',$event)" [ngStyle]="__elementSelectionService.getStyles('1100279293')">
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)" (contextmenu)="__elementSelectionService.select('707865069',$event)" [ngStyle]="__elementSelectionService.getStyles('707865069')">
+                    <th scope="col" jhiSortBy="id" (contextmenu)="__elementSelectionService.select('494602401',$event)" [ngStyle]="__elementSelectionService.getStyles('494602401')"><span jhiTranslate="global.field.id" (contextmenu)="__elementSelectionService.select('1838809357',$event)" [ngStyle]="__elementSelectionService.getStyles('1838809357')">ID</span> <fa-icon icon="sort" (contextmenu)="__elementSelectionService.select('193458758',$event)" [ngStyle]="__elementSelectionService.getStyles('193458758')"></fa-icon></th>
+                    <th scope="col" jhiSortBy="ma" (contextmenu)="__elementSelectionService.select('677043354',$event)" [ngStyle]="__elementSelectionService.getStyles('677043354')"><span jhiTranslate="okmeApp.dmDonVi.ma" (contextmenu)="__elementSelectionService.select('1839327024',$event)" [ngStyle]="__elementSelectionService.getStyles('1839327024')">Ma</span> <fa-icon icon="sort" (contextmenu)="__elementSelectionService.select('1351483872',$event)" [ngStyle]="__elementSelectionService.getStyles('1351483872')"></fa-icon></th>
+                    <th scope="col" (contextmenu)="__elementSelectionService.select('1680858229',$event)" [ngStyle]="__elementSelectionService.getStyles('1680858229')"></th>
+                </tr>
+            </thead>
+            <tbody (contextmenu)="__elementSelectionService.select('443511398',$event)" [ngStyle]="__elementSelectionService.getStyles('443511398')">
+                <tr *ngFor="let dmDonVi of dmDonVis ;trackBy: trackId" (contextmenu)="__elementSelectionService.select('2014678652',$event)" [ngStyle]="__elementSelectionService.getStyles('2014678652')">
+                    <td (contextmenu)="__elementSelectionService.select('1488195999',$event)" [ngStyle]="__elementSelectionService.getStyles('1488195999')"><a [routerLink]="['/dm-don-vi', dmDonVi.id, 'view']" (contextmenu)="__elementSelectionService.select('1122153096',$event)" [ngStyle]="__elementSelectionService.getStyles('1122153096')">{{ dmDonVi.id }}</a></td>
+                    <td (contextmenu)="__elementSelectionService.select('595526896',$event)" [ngStyle]="__elementSelectionService.getStyles('595526896')">{{ dmDonVi.ma }}</td>
+                    <td class="text-right" (contextmenu)="__elementSelectionService.select('2001537165',$event)" [ngStyle]="__elementSelectionService.getStyles('2001537165')">
+                        <div class="btn-group" (contextmenu)="__elementSelectionService.select('252565266',$event)" [ngStyle]="__elementSelectionService.getStyles('252565266')">
+                            <button type="submit" [routerLink]="['/dm-don-vi', dmDonVi.id, 'view']" class="btn btn-info btn-sm" (contextmenu)="__elementSelectionService.select('1479299721',$event)" [ngStyle]="__elementSelectionService.getStyles('1479299721')">
+                                <fa-icon icon="eye" (contextmenu)="__elementSelectionService.select('61834744',$event)" [ngStyle]="__elementSelectionService.getStyles('61834744')"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view" (contextmenu)="__elementSelectionService.select('481950816',$event)" [ngStyle]="__elementSelectionService.getStyles('481950816')">View</span>
+                            </button>
+
+                            <button type="submit" [routerLink]="['/dm-don-vi', dmDonVi.id, 'edit']" class="btn btn-primary btn-sm" (contextmenu)="__elementSelectionService.select('2104303010',$event)" [ngStyle]="__elementSelectionService.getStyles('2104303010')">
+                                <fa-icon icon="pencil-alt" (contextmenu)="__elementSelectionService.select('1206886556',$event)" [ngStyle]="__elementSelectionService.getStyles('1206886556')"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit" (contextmenu)="__elementSelectionService.select('948993500',$event)" [ngStyle]="__elementSelectionService.getStyles('948993500')">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(dmDonVi)" class="btn btn-danger btn-sm" (contextmenu)="__elementSelectionService.select('1805245522',$event)" [ngStyle]="__elementSelectionService.getStyles('1805245522')">
+                                <fa-icon icon="times" (contextmenu)="__elementSelectionService.select('2123127950',$event)" [ngStyle]="__elementSelectionService.getStyles('2123127950')"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete" (contextmenu)="__elementSelectionService.select('1155393667',$event)" [ngStyle]="__elementSelectionService.getStyles('1155393667')">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="dmDonVis &#38;&#38; dmDonVis.length &#62; 0" (contextmenu)="__elementSelectionService.select('2132280153',$event)" [ngStyle]="__elementSelectionService.getStyles('2132280153')">
+        <div class="row justify-content-center" (contextmenu)="__elementSelectionService.select('1522936740',$event)" [ngStyle]="__elementSelectionService.getStyles('1522936740')">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage" (contextmenu)="__elementSelectionService.select('1177707614',$event)" [ngStyle]="__elementSelectionService.getStyles('1177707614')"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center" (contextmenu)="__elementSelectionService.select('1828722155',$event)" [ngStyle]="__elementSelectionService.getStyles('1828722155')">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)" (contextmenu)="__elementSelectionService.select('1379783129',$event)" [ngStyle]="__elementSelectionService.getStyles('1379783129')"></ngb-pagination>
+        </div>
+    </div>
+</div>

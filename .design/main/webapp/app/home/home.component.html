@@ -1,0 +1,43 @@
+<div class="row" (contextmenu)="__elementSelectionService.select('2114785831',$event)" [ngStyle]="__elementSelectionService.getStyles('2114785831')"(click)='__elementSelectionService.clear()'>
+    <div class="col-md-3" (contextmenu)="__elementSelectionService.select('429758109',$event)" [ngStyle]="__elementSelectionService.getStyles('429758109')">
+        <span class="hipster img-fluid rounded" (contextmenu)="__elementSelectionService.select('253178787',$event)" [ngStyle]="__elementSelectionService.getStyles('253178787')"></span>
+    </div>
+
+    <div class="col-md-9" (contextmenu)="__elementSelectionService.select('1878684702',$event)" [ngStyle]="__elementSelectionService.getStyles('1878684702')">
+        <h1 class="display-4" jhiTranslate="home.title" (contextmenu)="__elementSelectionService.select('654063279',$event)" [ngStyle]="__elementSelectionService.getStyles('654063279')">Welcome, Java Hipster!</h1>
+
+        <p class="lead" jhiTranslate="home.subtitle" (contextmenu)="__elementSelectionService.select('1403020691',$event)" [ngStyle]="__elementSelectionService.getStyles('1403020691')">This is your homepage</p>
+
+        <div [ngSwitch]="isAuthenticated()" (contextmenu)="__elementSelectionService.select('1696386671',$event)" [ngStyle]="__elementSelectionService.getStyles('1696386671')">
+            <div class="alert alert-success" *ngSwitchCase="true" (contextmenu)="__elementSelectionService.select('1501174870',$event)" [ngStyle]="__elementSelectionService.getStyles('1501174870')">
+                <span id="home-logged-message" *ngIf="account" jhiTranslate="home.logged.message" [translateValues]="{ username: account.login }" (contextmenu)="__elementSelectionService.select('519311512',$event)" [ngStyle]="__elementSelectionService.getStyles('519311512')">You are logged in as user &#34;{{ account.login }}&#34;.</span>
+            </div>
+
+            <div class="alert alert-warning" *ngSwitchCase="false" (contextmenu)="__elementSelectionService.select('1311273512',$event)" [ngStyle]="__elementSelectionService.getStyles('1311273512')">
+                <span jhiTranslate="global.messages.info.authenticated.prefix" (contextmenu)="__elementSelectionService.select('1304736308',$event)" [ngStyle]="__elementSelectionService.getStyles('1304736308')">If you want to </span>
+                <a class="alert-link" (click)="login()" jhiTranslate="global.messages.info.authenticated.link" (contextmenu)="__elementSelectionService.select('1154846582',$event)" [ngStyle]="__elementSelectionService.getStyles('1154846582')">sign in</a><span jhiTranslate="global.messages.info.authenticated.suffix" (contextmenu)="__elementSelectionService.select('2056992676',$event)" [ngStyle]="__elementSelectionService.getStyles('2056992676')">, you can try the default accounts:<br (contextmenu)="__elementSelectionService.select('2007999469',$event)" [ngStyle]="__elementSelectionService.getStyles('2007999469')">- Administrator (login=&#34;admin&#34; and password=&#34;admin&#34;) <br (contextmenu)="__elementSelectionService.select('529721918',$event)" [ngStyle]="__elementSelectionService.getStyles('529721918')">- User (login=&#34;user&#34; and password=&#34;user&#34;).</span>
+            </div>
+
+            <div class="alert alert-warning" *ngSwitchCase="false" (contextmenu)="__elementSelectionService.select('2002024581',$event)" [ngStyle]="__elementSelectionService.getStyles('2002024581')">
+                <span jhiTranslate="global.messages.info.register.noaccount" (contextmenu)="__elementSelectionService.select('1414612956',$event)" [ngStyle]="__elementSelectionService.getStyles('1414612956')">You don't have an account yet?</span>&#160;
+                <a class="alert-link" routerLink="account/register" jhiTranslate="global.messages.info.register.link" (contextmenu)="__elementSelectionService.select('1592473200',$event)" [ngStyle]="__elementSelectionService.getStyles('1592473200')">Register a new account</a>
+            </div>
+        </div>
+
+        <p jhiTranslate="home.question" (contextmenu)="__elementSelectionService.select('1453384841',$event)" [ngStyle]="__elementSelectionService.getStyles('1453384841')">
+            If you have any question on JHipster:
+        </p>
+
+        <ul (contextmenu)="__elementSelectionService.select('48512648',$event)" [ngStyle]="__elementSelectionService.getStyles('48512648')">
+            <li (contextmenu)="__elementSelectionService.select('1549137583',$event)" [ngStyle]="__elementSelectionService.getStyles('1549137583')"><a href="https://www.jhipster.tech/" target="_blank" rel="noopener noreferrer" jhiTranslate="home.link.homepage" (contextmenu)="__elementSelectionService.select('1527383011',$event)" [ngStyle]="__elementSelectionService.getStyles('1527383011')">JHipster homepage</a></li>
+            <li (contextmenu)="__elementSelectionService.select('174010535',$event)" [ngStyle]="__elementSelectionService.getStyles('174010535')"><a href="http://stackoverflow.com/tags/jhipster/info" target="_blank" rel="noopener noreferrer" jhiTranslate="home.link.stackoverflow" (contextmenu)="__elementSelectionService.select('694968090',$event)" [ngStyle]="__elementSelectionService.getStyles('694968090')">JHipster on Stack Overflow</a></li>
+            <li (contextmenu)="__elementSelectionService.select('1526674454',$event)" [ngStyle]="__elementSelectionService.getStyles('1526674454')"><a href="https://github.com/jhipster/generator-jhipster/issues?state=open" target="_blank" rel="noopener noreferrer" jhiTranslate="home.link.bugtracker" (contextmenu)="__elementSelectionService.select('1365324209',$event)" [ngStyle]="__elementSelectionService.getStyles('1365324209')">JHipster bug tracker</a></li>
+            <li (contextmenu)="__elementSelectionService.select('575207730',$event)" [ngStyle]="__elementSelectionService.getStyles('575207730')"><a href="https://gitter.im/jhipster/generator-jhipster" target="_blank" rel="noopener noreferrer" jhiTranslate="home.link.chat" (contextmenu)="__elementSelectionService.select('1771562734',$event)" [ngStyle]="__elementSelectionService.getStyles('1771562734')">JHipster public chat room</a></li>
+            <li (contextmenu)="__elementSelectionService.select('1248538702',$event)" [ngStyle]="__elementSelectionService.getStyles('1248538702')"><a href="https://twitter.com/jhipster" target="_blank" rel="noopener noreferrer" jhiTranslate="home.link.follow" (contextmenu)="__elementSelectionService.select('308247563',$event)" [ngStyle]="__elementSelectionService.getStyles('308247563')">follow @jhipster on Twitter</a></li>
+        </ul>
+
+        <p (contextmenu)="__elementSelectionService.select('2008782363',$event)" [ngStyle]="__elementSelectionService.getStyles('2008782363')">
+            <span jhiTranslate="home.like" (contextmenu)="__elementSelectionService.select('567127700',$event)" [ngStyle]="__elementSelectionService.getStyles('567127700')">If you like JHipster, don't forget to give us a star on</span> <a href="https://github.com/jhipster/generator-jhipster" target="_blank" rel="noopener noreferrer" jhiTranslate="home.github" (contextmenu)="__elementSelectionService.select('850858915',$event)" [ngStyle]="__elementSelectionService.getStyles('850858915')">GitHub</a>!
+        </p>
+    </div>
+</div>

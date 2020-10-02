@@ -1,0 +1,36 @@
+<div class="modal-header" (contextmenu)="__elementSelectionService.select('449546999',$event)" [ngStyle]="__elementSelectionService.getStyles('449546999')"(click)='__elementSelectionService.clear()'>
+    <h4 class="modal-title" id="showHealthLabel" *ngIf="health" (contextmenu)="__elementSelectionService.select('1498245158',$event)" [ngStyle]="__elementSelectionService.getStyles('1498245158')">
+        {{ 'health.indicator.' + health.key | translate }}
+    </h4>
+
+    <button aria-label="Close" data-dismiss="modal" class="close" type="button" (click)="dismiss()" (contextmenu)="__elementSelectionService.select('547079102',$event)" [ngStyle]="__elementSelectionService.getStyles('547079102')">
+        <span aria-hidden="true" (contextmenu)="__elementSelectionService.select('759073873',$event)" [ngStyle]="__elementSelectionService.getStyles('759073873')">&#215;</span>
+    </button>
+</div>
+
+<div class="modal-body pad" (contextmenu)="__elementSelectionService.select('1783267601',$event)" [ngStyle]="__elementSelectionService.getStyles('1783267601')"(click)='__elementSelectionService.clear()'>
+    <div *ngIf="health" (contextmenu)="__elementSelectionService.select('2095972694',$event)" [ngStyle]="__elementSelectionService.getStyles('2095972694')">
+        <h5 jhiTranslate="health.details.properties" (contextmenu)="__elementSelectionService.select('1322277557',$event)" [ngStyle]="__elementSelectionService.getStyles('1322277557')">Properties</h5>
+
+        <div class="table-responsive" (contextmenu)="__elementSelectionService.select('816375522',$event)" [ngStyle]="__elementSelectionService.getStyles('816375522')">
+            <table class="table table-striped" aria-describedby="showHealthLabel" (contextmenu)="__elementSelectionService.select('1764599970',$event)" [ngStyle]="__elementSelectionService.getStyles('1764599970')">
+                <thead (contextmenu)="__elementSelectionService.select('1707470944',$event)" [ngStyle]="__elementSelectionService.getStyles('1707470944')">
+                    <tr (contextmenu)="__elementSelectionService.select('688655263',$event)" [ngStyle]="__elementSelectionService.getStyles('688655263')">
+                        <th scope="col" class="text-left" jhiTranslate="health.details.name" (contextmenu)="__elementSelectionService.select('1583642538',$event)" [ngStyle]="__elementSelectionService.getStyles('1583642538')">Name</th>
+                        <th scope="col" class="text-left" jhiTranslate="health.details.value" (contextmenu)="__elementSelectionService.select('1510517884',$event)" [ngStyle]="__elementSelectionService.getStyles('1510517884')">Value</th>
+                    </tr>
+                </thead>
+                <tbody (contextmenu)="__elementSelectionService.select('268702125',$event)" [ngStyle]="__elementSelectionService.getStyles('268702125')">
+                    <tr *ngFor="let healthDetail of health.value.details | keys" (contextmenu)="__elementSelectionService.select('1503506625',$event)" [ngStyle]="__elementSelectionService.getStyles('1503506625')">
+                        <td class="text-left" (contextmenu)="__elementSelectionService.select('607737215',$event)" [ngStyle]="__elementSelectionService.getStyles('607737215')">{{ healthDetail.key }}</td>
+                        <td class="text-left" (contextmenu)="__elementSelectionService.select('994928328',$event)" [ngStyle]="__elementSelectionService.getStyles('994928328')">{{ readableValue(healthDetail.value) }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="modal-footer" (contextmenu)="__elementSelectionService.select('1850933182',$event)" [ngStyle]="__elementSelectionService.getStyles('1850933182')"(click)='__elementSelectionService.clear()'>
+    <button data-dismiss="modal" class="btn btn-secondary float-left" type="button" (click)="dismiss()" (contextmenu)="__elementSelectionService.select('200573301',$event)" [ngStyle]="__elementSelectionService.getStyles('200573301')">Done</button>
+</div>

@@ -1,0 +1,25 @@
+<div (contextmenu)="__elementSelectionService.select('2024451032',$event)" [ngStyle]="__elementSelectionService.getStyles('2024451032')"(click)='__elementSelectionService.clear()'>
+    <h2 id="tracker-page-heading" jhiTranslate="tracker.title" (contextmenu)="__elementSelectionService.select('1631783869',$event)" [ngStyle]="__elementSelectionService.getStyles('1631783869')">Real-time user activities</h2>
+
+    <div class="table-responsive" (contextmenu)="__elementSelectionService.select('1276807206',$event)" [ngStyle]="__elementSelectionService.getStyles('1276807206')">
+        <table class="table table-striped" aria-describedby="tracker-page-heading" (contextmenu)="__elementSelectionService.select('1966212196',$event)" [ngStyle]="__elementSelectionService.getStyles('1966212196')">
+            <thead (contextmenu)="__elementSelectionService.select('1654113762',$event)" [ngStyle]="__elementSelectionService.getStyles('1654113762')">
+                <tr (contextmenu)="__elementSelectionService.select('460334318',$event)" [ngStyle]="__elementSelectionService.getStyles('460334318')">
+                    <th scope="col" jhiTranslate="tracker.table.userlogin" (contextmenu)="__elementSelectionService.select('62112798',$event)" [ngStyle]="__elementSelectionService.getStyles('62112798')">User</th>
+                    <th scope="col" jhiTranslate="tracker.table.ipaddress" (contextmenu)="__elementSelectionService.select('1724375336',$event)" [ngStyle]="__elementSelectionService.getStyles('1724375336')">IP Address</th>
+                    <th scope="col" jhiTranslate="tracker.table.page" (contextmenu)="__elementSelectionService.select('975409351',$event)" [ngStyle]="__elementSelectionService.getStyles('975409351')">Current page</th>
+                    <th scope="col" jhiTranslate="tracker.table.time" (contextmenu)="__elementSelectionService.select('552502329',$event)" [ngStyle]="__elementSelectionService.getStyles('552502329')">Time</th>
+                    <th scope="col" (contextmenu)="__elementSelectionService.select('1029711630',$event)" [ngStyle]="__elementSelectionService.getStyles('1029711630')"></th>
+                </tr>
+            </thead>
+            <tbody (contextmenu)="__elementSelectionService.select('1685540651',$event)" [ngStyle]="__elementSelectionService.getStyles('1685540651')">
+                <tr *ngFor="let activity of activities" (contextmenu)="__elementSelectionService.select('1114922698',$event)" [ngStyle]="__elementSelectionService.getStyles('1114922698')">
+                    <td (contextmenu)="__elementSelectionService.select('384816625',$event)" [ngStyle]="__elementSelectionService.getStyles('384816625')">{{ activity.userLogin }}</td>
+                    <td (contextmenu)="__elementSelectionService.select('713807989',$event)" [ngStyle]="__elementSelectionService.getStyles('713807989')">{{ activity.ipAddress }}</td>
+                    <td (contextmenu)="__elementSelectionService.select('1960559640',$event)" [ngStyle]="__elementSelectionService.getStyles('1960559640')">{{ activity.page }}</td>
+                    <td (contextmenu)="__elementSelectionService.select('347686471',$event)" [ngStyle]="__elementSelectionService.getStyles('347686471')">{{ activity.time | date:'yyyy-MM-dd HH:mm:ss' }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

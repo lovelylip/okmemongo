@@ -1,0 +1,26 @@
+<div class="row justify-content-center" (contextmenu)="__elementSelectionService.select('505164560',$event)" [ngStyle]="__elementSelectionService.getStyles('505164560')"(click)='__elementSelectionService.clear()'>
+    <div class="col-8" (contextmenu)="__elementSelectionService.select('1755390337',$event)" [ngStyle]="__elementSelectionService.getStyles('1755390337')">
+        <div *ngIf="dmDonVi" (contextmenu)="__elementSelectionService.select('391777078',$event)" [ngStyle]="__elementSelectionService.getStyles('391777078')">
+            <h2 (contextmenu)="__elementSelectionService.select('630767128',$event)" [ngStyle]="__elementSelectionService.getStyles('630767128')"><span jhiTranslate="okmeApp.dmDonVi.detail.title" (contextmenu)="__elementSelectionService.select('1455993690',$event)" [ngStyle]="__elementSelectionService.getStyles('1455993690')">Dm Don Vi</span> {{ dmDonVi.id }}</h2>
+
+            <hr (contextmenu)="__elementSelectionService.select('931413291',$event)" [ngStyle]="__elementSelectionService.getStyles('931413291')">
+
+            <jhi-alert-error (contextmenu)="__elementSelectionService.select('1891668822',$event)" [ngStyle]="__elementSelectionService.getStyles('1891668822')"></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details" (contextmenu)="__elementSelectionService.select('273193768',$event)" [ngStyle]="__elementSelectionService.getStyles('273193768')">
+                <dt (contextmenu)="__elementSelectionService.select('50964504',$event)" [ngStyle]="__elementSelectionService.getStyles('50964504')"><span jhiTranslate="okmeApp.dmDonVi.ma" (contextmenu)="__elementSelectionService.select('368222263',$event)" [ngStyle]="__elementSelectionService.getStyles('368222263')">Ma</span></dt>
+                <dd (contextmenu)="__elementSelectionService.select('1633471484',$event)" [ngStyle]="__elementSelectionService.getStyles('1633471484')">
+                    <span (contextmenu)="__elementSelectionService.select('899255588',$event)" [ngStyle]="__elementSelectionService.getStyles('899255588')">{{ dmDonVi.ma }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit" (click)="previousState()" class="btn btn-info" (contextmenu)="__elementSelectionService.select('2073996007',$event)" [ngStyle]="__elementSelectionService.getStyles('2073996007')">
+                <fa-icon icon="arrow-left" (contextmenu)="__elementSelectionService.select('2070761147',$event)" [ngStyle]="__elementSelectionService.getStyles('2070761147')"></fa-icon>&#160;<span jhiTranslate="entity.action.back" (contextmenu)="__elementSelectionService.select('2095671553',$event)" [ngStyle]="__elementSelectionService.getStyles('2095671553')">Back</span>
+            </button>
+
+            <button type="button" [routerLink]="['/dm-don-vi', dmDonVi.id, 'edit']" class="btn btn-primary" (contextmenu)="__elementSelectionService.select('98577173',$event)" [ngStyle]="__elementSelectionService.getStyles('98577173')">
+                <fa-icon icon="pencil-alt" (contextmenu)="__elementSelectionService.select('195522780',$event)" [ngStyle]="__elementSelectionService.getStyles('195522780')"></fa-icon>&#160;<span jhiTranslate="entity.action.edit" (contextmenu)="__elementSelectionService.select('447672197',$event)" [ngStyle]="__elementSelectionService.getStyles('447672197')">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

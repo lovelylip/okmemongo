@@ -1,0 +1,34 @@
+<div class="row justify-content-center" (contextmenu)="__elementSelectionService.select('1044152004',$event)" [ngStyle]="__elementSelectionService.getStyles('1044152004')"(click)='__elementSelectionService.clear()'>
+    <div class="col-8" (contextmenu)="__elementSelectionService.select('644358921',$event)" [ngStyle]="__elementSelectionService.getStyles('644358921')">
+        <div *ngIf="dmCqbh" (contextmenu)="__elementSelectionService.select('2080351070',$event)" [ngStyle]="__elementSelectionService.getStyles('2080351070')">
+            <h2 (contextmenu)="__elementSelectionService.select('349840020',$event)" [ngStyle]="__elementSelectionService.getStyles('349840020')"><span jhiTranslate="okmeApp.dmCqbh.detail.title" (contextmenu)="__elementSelectionService.select('441404330',$event)" [ngStyle]="__elementSelectionService.getStyles('441404330')">Dm Cqbh</span> {{ dmCqbh.id }}</h2>
+
+            <hr (contextmenu)="__elementSelectionService.select('2111325057',$event)" [ngStyle]="__elementSelectionService.getStyles('2111325057')">
+
+            <jhi-alert-error (contextmenu)="__elementSelectionService.select('2067528247',$event)" [ngStyle]="__elementSelectionService.getStyles('2067528247')"></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details" (contextmenu)="__elementSelectionService.select('1051769158',$event)" [ngStyle]="__elementSelectionService.getStyles('1051769158')">
+                <dt (contextmenu)="__elementSelectionService.select('1581430561',$event)" [ngStyle]="__elementSelectionService.getStyles('1581430561')"><span jhiTranslate="okmeApp.dmCqbh.ma" (contextmenu)="__elementSelectionService.select('1631134499',$event)" [ngStyle]="__elementSelectionService.getStyles('1631134499')">Ma</span></dt>
+                <dd (contextmenu)="__elementSelectionService.select('1165461361',$event)" [ngStyle]="__elementSelectionService.getStyles('1165461361')">
+                    <span (contextmenu)="__elementSelectionService.select('2125884432',$event)" [ngStyle]="__elementSelectionService.getStyles('2125884432')">{{ dmCqbh.ma }}</span>
+                </dd>
+            </dl>
+
+            <dl class="row-md jh-entity-details" (contextmenu)="__elementSelectionService.select('897984344',$event)" [ngStyle]="__elementSelectionService.getStyles('897984344')">
+                <dt (contextmenu)="__elementSelectionService.select('487467760',$event)" [ngStyle]="__elementSelectionService.getStyles('487467760')"><span jhiTranslate="okmeApp.dmCqbh.ten" (contextmenu)="__elementSelectionService.select('1681615407',$event)" [ngStyle]="__elementSelectionService.getStyles('1681615407')">Ten</span></dt>
+                <dd (contextmenu)="__elementSelectionService.select('689986644',$event)" [ngStyle]="__elementSelectionService.getStyles('689986644')">
+                    <span (contextmenu)="__elementSelectionService.select('756552399',$event)" [ngStyle]="__elementSelectionService.getStyles('756552399')">{{ dmCqbh.ten }}</span>
+                </dd>
+            </dl>
+
+
+            <button type="submit" (click)="previousState()" class="btn btn-info" (contextmenu)="__elementSelectionService.select('1093526582',$event)" [ngStyle]="__elementSelectionService.getStyles('1093526582')">
+                <fa-icon icon="arrow-left" (contextmenu)="__elementSelectionService.select('2130220078',$event)" [ngStyle]="__elementSelectionService.getStyles('2130220078')"></fa-icon>&#160;<span jhiTranslate="entity.action.back" (contextmenu)="__elementSelectionService.select('1435612505',$event)" [ngStyle]="__elementSelectionService.getStyles('1435612505')">Back</span>
+            </button>
+
+            <button type="button" [routerLink]="['/dm-cqbh', dmCqbh.id, 'edit']" class="btn btn-primary" (contextmenu)="__elementSelectionService.select('955407182',$event)" [ngStyle]="__elementSelectionService.getStyles('955407182')">
+                <fa-icon icon="pencil-alt" (contextmenu)="__elementSelectionService.select('382735410',$event)" [ngStyle]="__elementSelectionService.getStyles('382735410')"></fa-icon>&#160;<span jhiTranslate="entity.action.edit" (contextmenu)="__elementSelectionService.select('749976354',$event)" [ngStyle]="__elementSelectionService.getStyles('749976354')">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
