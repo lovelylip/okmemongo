@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { JhiLanguageService } from 'ng-jhipster';
-import { SessionStorageService } from 'ngx-webstorage';
+import { LocalStorageService, SessionStorageService } from 'ngx-webstorage';
 
 import { VERSION } from 'app/app.constants';
 import { LANGUAGES } from 'app/core/language/language.constants';
@@ -9,7 +9,7 @@ import { AccountService } from 'app/core/auth/account.service';
 import { LoginModalService } from 'app/core/login/login-modal.service';
 import { LoginService } from 'app/core/login/login.service';
 import { ProfileService } from 'app/layouts/profiles/profile.service';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'jhi-navbar',
@@ -31,7 +31,9 @@ export class NavbarComponent implements OnInit {
     private loginModalService: LoginModalService,
     private profileService: ProfileService,
     private router: Router,
-    public activeModal: NgbActiveModal
+    private $localStorage: LocalStorageService,
+    private $sessionStorage: SessionStorageService,
+    private $cookies: CookieService
   ) {
     this.version = VERSION ? (VERSION.toLowerCase().startsWith('v') ? VERSION : 'v' + VERSION) : '';
   }
@@ -48,12 +50,10 @@ export class NavbarComponent implements OnInit {
   }
 
   register(): void {
-    this.activeModal.dismiss('to state register');
     this.router.navigate(['/account/register']);
   }
 
   requestResetPassword(): void {
-    this.activeModal.dismiss('to state requestReset');
     this.router.navigate(['/account/reset', 'request']);
   }
 
@@ -78,6 +78,11 @@ export class NavbarComponent implements OnInit {
     this.collapseNavbar();
     this.loginService.logout();
     this.router.navigate(['']);
+    this.$localStorage.clear('authenticationToken');
+    this.$sessionStorage.clear('authenticationToken');
+    this.$localStorage.clear('Authorization');
+    this.$sessionStorage.clear('Authorization');
+    this.$cookies.delete('Authorization');
     window.location.replace('https://ssotest.baohiemxahoi.gov.vn:8443/logout?');
   }
 
