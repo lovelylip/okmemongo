@@ -30,6 +30,7 @@ export class AuthServerProvider {
       this.$localStorage.clear('authenticationToken');
       this.$sessionStorage.clear('authenticationToken');
       observer.complete();
+      window.location.replace('https://ssotest.baohiemxahoi.gov.vn:8443/logout?');
     });
   }
 

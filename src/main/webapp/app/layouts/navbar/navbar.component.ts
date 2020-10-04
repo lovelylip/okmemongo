@@ -33,7 +33,7 @@ export class NavbarComponent implements OnInit {
     private router: Router,
     private $localStorage: LocalStorageService,
     private $sessionStorage: SessionStorageService,
-    private $cookies: CookieService
+    private cookieService: CookieService
   ) {
     this.version = VERSION ? (VERSION.toLowerCase().startsWith('v') ? VERSION : 'v' + VERSION) : '';
   }
@@ -43,10 +43,6 @@ export class NavbarComponent implements OnInit {
       this.inProduction = profileInfo.inProduction;
       this.swaggerEnabled = profileInfo.swaggerEnabled;
     });
-    window.console.log(this.isAuthenticated());
-    /*if(!this.accountService.isAuthenticated()){
-      window.location.replace('https://ssotest.baohiemxahoi.gov.vn:8443/login?service=http://tdqt.bhxh.gov.vn:8888/');
-    }*/
   }
 
   register(): void {
@@ -76,14 +72,12 @@ export class NavbarComponent implements OnInit {
 
   logout(): void {
     this.collapseNavbar();
-    this.loginService.logout();
-    this.router.navigate(['']);
-    this.$localStorage.clear('authenticationToken');
-    this.$sessionStorage.clear('authenticationToken');
     this.$localStorage.clear('Authorization');
     this.$sessionStorage.clear('Authorization');
-    this.$cookies.delete('Authorization');
-    window.location.replace('https://ssotest.baohiemxahoi.gov.vn:8443/logout?');
+    this.cookieService.set('Authorization', '');
+    this.cookieService.delete('Authorization', '');
+    this.loginService.logout();
+    this.router.navigate(['']);
   }
 
   toggleNavbar(): void {

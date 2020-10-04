@@ -15,6 +15,8 @@ import { PageRibbonComponent } from './layouts/profiles/page-ribbon.component';
 import { ActiveMenuDirective } from './layouts/navbar/active-menu.directive';
 import { ErrorComponent } from './layouts/error/error.component';
 
+import { CookieService } from 'ngx-cookie-service';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -25,6 +27,7 @@ import { ErrorComponent } from './layouts/error/error.component';
     OkmeEntityModule,
     OkmeAppRoutingModule,
   ],
+  providers: [CookieService],
   declarations: [MainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, ActiveMenuDirective, FooterComponent],
   bootstrap: [MainComponent],
 })
