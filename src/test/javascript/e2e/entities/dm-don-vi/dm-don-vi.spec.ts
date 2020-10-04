@@ -40,9 +40,45 @@ describe('DmDonVi e2e test', () => {
 
     await dmDonViComponentsPage.clickOnCreateButton();
 
-    await promise.all([dmDonViUpdatePage.setMaInput('ma')]);
+    await promise.all([
+      dmDonViUpdatePage.setMaInput('ma'),
+      dmDonViUpdatePage.setTenInput('ten'),
+      dmDonViUpdatePage.setTongLdInput('5'),
+      dmDonViUpdatePage.setTongLuongInput('5'),
+      dmDonViUpdatePage.setLoaiDvInput('loaiDv'),
+      dmDonViUpdatePage.setDiachiInput('diachi'),
+      dmDonViUpdatePage.setDienthoaiInput('dienthoai'),
+      dmDonViUpdatePage.setFaxInput('fax'),
+      dmDonViUpdatePage.setSoTaiKhoanInput('soTaiKhoan'),
+      dmDonViUpdatePage.setNganHangInput('nganHang'),
+      dmDonViUpdatePage.setMaCqbhInput('maCqbh'),
+      dmDonViUpdatePage.setMaTinhInput('maTinh'),
+      dmDonViUpdatePage.setMaHuyenInput('maHuyen'),
+      dmDonViUpdatePage.setSoDkkdInput('soDkkd'),
+      dmDonViUpdatePage.setMaStInput('maSt'),
+      dmDonViUpdatePage.setNguoiLhInput('nguoiLh'),
+      dmDonViUpdatePage.setMaDvikcbInput('maDvikcb'),
+      dmDonViUpdatePage.setMaKhoikcbInput('maKhoikcb'),
+    ]);
 
     expect(await dmDonViUpdatePage.getMaInput()).to.eq('ma', 'Expected Ma value to be equals to ma');
+    expect(await dmDonViUpdatePage.getTenInput()).to.eq('ten', 'Expected Ten value to be equals to ten');
+    expect(await dmDonViUpdatePage.getTongLdInput()).to.eq('5', 'Expected tongLd value to be equals to 5');
+    expect(await dmDonViUpdatePage.getTongLuongInput()).to.eq('5', 'Expected tongLuong value to be equals to 5');
+    expect(await dmDonViUpdatePage.getLoaiDvInput()).to.eq('loaiDv', 'Expected LoaiDv value to be equals to loaiDv');
+    expect(await dmDonViUpdatePage.getDiachiInput()).to.eq('diachi', 'Expected Diachi value to be equals to diachi');
+    expect(await dmDonViUpdatePage.getDienthoaiInput()).to.eq('dienthoai', 'Expected Dienthoai value to be equals to dienthoai');
+    expect(await dmDonViUpdatePage.getFaxInput()).to.eq('fax', 'Expected Fax value to be equals to fax');
+    expect(await dmDonViUpdatePage.getSoTaiKhoanInput()).to.eq('soTaiKhoan', 'Expected SoTaiKhoan value to be equals to soTaiKhoan');
+    expect(await dmDonViUpdatePage.getNganHangInput()).to.eq('nganHang', 'Expected NganHang value to be equals to nganHang');
+    expect(await dmDonViUpdatePage.getMaCqbhInput()).to.eq('maCqbh', 'Expected MaCqbh value to be equals to maCqbh');
+    expect(await dmDonViUpdatePage.getMaTinhInput()).to.eq('maTinh', 'Expected MaTinh value to be equals to maTinh');
+    expect(await dmDonViUpdatePage.getMaHuyenInput()).to.eq('maHuyen', 'Expected MaHuyen value to be equals to maHuyen');
+    expect(await dmDonViUpdatePage.getSoDkkdInput()).to.eq('soDkkd', 'Expected SoDkkd value to be equals to soDkkd');
+    expect(await dmDonViUpdatePage.getMaStInput()).to.eq('maSt', 'Expected MaSt value to be equals to maSt');
+    expect(await dmDonViUpdatePage.getNguoiLhInput()).to.eq('nguoiLh', 'Expected NguoiLh value to be equals to nguoiLh');
+    expect(await dmDonViUpdatePage.getMaDvikcbInput()).to.eq('maDvikcb', 'Expected MaDvikcb value to be equals to maDvikcb');
+    expect(await dmDonViUpdatePage.getMaKhoikcbInput()).to.eq('maKhoikcb', 'Expected MaKhoikcb value to be equals to maKhoikcb');
 
     await dmDonViUpdatePage.save();
     expect(await dmDonViUpdatePage.getSaveButton().isPresent(), 'Expected save button disappear').to.be.false;

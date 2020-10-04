@@ -1,5 +1,7 @@
 import { TestBed, getTestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import * as moment from 'moment';
+import { DATE_FORMAT } from 'app/shared/constants/input.constants';
 import { DmCqbhService } from 'app/entities/dm-cqbh/dm-cqbh.service';
 import { IDmCqbh, DmCqbh } from 'app/shared/model/dm-cqbh.model';
 
@@ -10,6 +12,7 @@ describe('Service Tests', () => {
     let httpMock: HttpTestingController;
     let elemDefault: IDmCqbh;
     let expectedResult: IDmCqbh | IDmCqbh[] | boolean | null;
+    let currentDate: moment.Moment;
 
     beforeEach(() => {
       TestBed.configureTestingModule({
@@ -19,13 +22,43 @@ describe('Service Tests', () => {
       injector = getTestBed();
       service = injector.get(DmCqbhService);
       httpMock = injector.get(HttpTestingController);
+      currentDate = moment();
 
-      elemDefault = new DmCqbh('ID', 'AAAAAAA');
+      elemDefault = new DmCqbh(
+        'ID',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        currentDate,
+        currentDate,
+        currentDate,
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        0,
+        'AAAAAAA'
+      );
     });
 
     describe('Service methods', () => {
       it('should find an element', () => {
-        const returnedFromService = Object.assign({}, elemDefault);
+        const returnedFromService = Object.assign(
+          {
+            createDate: currentDate.format(DATE_FORMAT),
+            activeDate: currentDate.format(DATE_FORMAT),
+            inactiveDate: currentDate.format(DATE_FORMAT),
+          },
+          elemDefault
+        );
 
         service.find('123').subscribe(resp => (expectedResult = resp.body));
 
@@ -38,11 +71,21 @@ describe('Service Tests', () => {
         const returnedFromService = Object.assign(
           {
             id: 'ID',
+            createDate: currentDate.format(DATE_FORMAT),
+            activeDate: currentDate.format(DATE_FORMAT),
+            inactiveDate: currentDate.format(DATE_FORMAT),
           },
           elemDefault
         );
 
-        const expected = Object.assign({}, returnedFromService);
+        const expected = Object.assign(
+          {
+            createDate: currentDate,
+            activeDate: currentDate,
+            inactiveDate: currentDate,
+          },
+          returnedFromService
+        );
 
         service.create(new DmCqbh()).subscribe(resp => (expectedResult = resp.body));
 
@@ -55,11 +98,37 @@ describe('Service Tests', () => {
         const returnedFromService = Object.assign(
           {
             ma: 'BBBBBB',
+            ten: 'BBBBBB',
+            diaChi: 'BBBBBB',
+            maXa: 'BBBBBB',
+            maHuyen: 'BBBBBB',
+            maTinh: 'BBBBBB',
+            emailAcc: 'BBBBBB',
+            phoneNumber: 'BBBBBB',
+            status: 'BBBBBB',
+            createDate: currentDate.format(DATE_FORMAT),
+            activeDate: currentDate.format(DATE_FORMAT),
+            inactiveDate: currentDate.format(DATE_FORMAT),
+            maCqbhCha: 'BBBBBB',
+            nguoiKy: 'BBBBBB',
+            chucDanh: 'BBBBBB',
+            tenNoiKy: 'BBBBBB',
+            isActive: 'BBBBBB',
+            path: 'BBBBBB',
+            ngayKhoa: 1,
+            ngayTemp: 'BBBBBB',
           },
           elemDefault
         );
 
-        const expected = Object.assign({}, returnedFromService);
+        const expected = Object.assign(
+          {
+            createDate: currentDate,
+            activeDate: currentDate,
+            inactiveDate: currentDate,
+          },
+          returnedFromService
+        );
 
         service.update(expected).subscribe(resp => (expectedResult = resp.body));
 
@@ -72,11 +141,37 @@ describe('Service Tests', () => {
         const returnedFromService = Object.assign(
           {
             ma: 'BBBBBB',
+            ten: 'BBBBBB',
+            diaChi: 'BBBBBB',
+            maXa: 'BBBBBB',
+            maHuyen: 'BBBBBB',
+            maTinh: 'BBBBBB',
+            emailAcc: 'BBBBBB',
+            phoneNumber: 'BBBBBB',
+            status: 'BBBBBB',
+            createDate: currentDate.format(DATE_FORMAT),
+            activeDate: currentDate.format(DATE_FORMAT),
+            inactiveDate: currentDate.format(DATE_FORMAT),
+            maCqbhCha: 'BBBBBB',
+            nguoiKy: 'BBBBBB',
+            chucDanh: 'BBBBBB',
+            tenNoiKy: 'BBBBBB',
+            isActive: 'BBBBBB',
+            path: 'BBBBBB',
+            ngayKhoa: 1,
+            ngayTemp: 'BBBBBB',
           },
           elemDefault
         );
 
-        const expected = Object.assign({}, returnedFromService);
+        const expected = Object.assign(
+          {
+            createDate: currentDate,
+            activeDate: currentDate,
+            inactiveDate: currentDate,
+          },
+          returnedFromService
+        );
 
         service.query().subscribe(resp => (expectedResult = resp.body));
 

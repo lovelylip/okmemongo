@@ -16,7 +16,24 @@
       "detail": {
         "title": "Dm Don Vi"
       },
-      "ma": "Ma"
+      "ma": "Ma",
+      "ten": "Ten",
+      "tongLd": "Tong Ld",
+      "tongLuong": "Tong Luong",
+      "loaiDv": "Loai Dv",
+      "diachi": "Diachi",
+      "dienthoai": "Dienthoai",
+      "fax": "Fax",
+      "soTaiKhoan": "So Tai Khoan",
+      "nganHang": "Ngan Hang",
+      "maCqbh": "Ma Cqbh",
+      "maTinh": "Ma Tinh",
+      "maHuyen": "Ma Huyen",
+      "soDkkd": "So Dkkd",
+      "maSt": "Ma St",
+      "nguoiLh": "Nguoi Lh",
+      "maDvikcb": "Ma Dvikcb",
+      "maKhoikcb": "Ma Khoikcb"
     }
   }
 }

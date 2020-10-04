@@ -14,11 +14,32 @@ import { DmCqbhService } from './dm-cqbh.service';
 })
 export class DmCqbhUpdateComponent implements OnInit {
   isSaving = false;
+  createDateDp: any;
+  activeDateDp: any;
+  inactiveDateDp: any;
 
   editForm = this.fb.group({
     id: [],
     ma: [null, [Validators.required]],
     ten: [],
+    diaChi: [],
+    maXa: [],
+    maHuyen: [],
+    maTinh: [],
+    emailAcc: [],
+    phoneNumber: [],
+    status: [],
+    createDate: [],
+    activeDate: [],
+    inactiveDate: [],
+    maCqbhCha: [],
+    nguoiKy: [],
+    chucDanh: [],
+    tenNoiKy: [],
+    isActive: [],
+    path: [],
+    ngayKhoa: [],
+    ngayTemp: [],
   });
 
   constructor(protected dmCqbhService: DmCqbhService, protected activatedRoute: ActivatedRoute, private fb: FormBuilder) {}
@@ -34,6 +55,24 @@ export class DmCqbhUpdateComponent implements OnInit {
       id: dmCqbh.id,
       ma: dmCqbh.ma,
       ten: dmCqbh.ten,
+      diaChi: dmCqbh.diaChi,
+      maXa: dmCqbh.maXa,
+      maHuyen: dmCqbh.maHuyen,
+      maTinh: dmCqbh.maTinh,
+      emailAcc: dmCqbh.emailAcc,
+      phoneNumber: dmCqbh.phoneNumber,
+      status: dmCqbh.status,
+      createDate: dmCqbh.createDate,
+      activeDate: dmCqbh.activeDate,
+      inactiveDate: dmCqbh.inactiveDate,
+      maCqbhCha: dmCqbh.maCqbhCha,
+      nguoiKy: dmCqbh.nguoiKy,
+      chucDanh: dmCqbh.chucDanh,
+      tenNoiKy: dmCqbh.tenNoiKy,
+      isActive: dmCqbh.isActive,
+      path: dmCqbh.path,
+      ngayKhoa: dmCqbh.ngayKhoa,
+      ngayTemp: dmCqbh.ngayTemp,
     });
   }
 
@@ -57,6 +96,24 @@ export class DmCqbhUpdateComponent implements OnInit {
       id: this.editForm.get(['id'])!.value,
       ma: this.editForm.get(['ma'])!.value,
       ten: this.editForm.get(['ten'])!.value,
+      diaChi: this.editForm.get(['diaChi'])!.value,
+      maXa: this.editForm.get(['maXa'])!.value,
+      maHuyen: this.editForm.get(['maHuyen'])!.value,
+      maTinh: this.editForm.get(['maTinh'])!.value,
+      emailAcc: this.editForm.get(['emailAcc'])!.value,
+      phoneNumber: this.editForm.get(['phoneNumber'])!.value,
+      status: this.editForm.get(['status'])!.value,
+      createDate: this.editForm.get(['createDate'])!.value,
+      activeDate: this.editForm.get(['activeDate'])!.value,
+      inactiveDate: this.editForm.get(['inactiveDate'])!.value,
+      maCqbhCha: this.editForm.get(['maCqbhCha'])!.value,
+      nguoiKy: this.editForm.get(['nguoiKy'])!.value,
+      chucDanh: this.editForm.get(['chucDanh'])!.value,
+      tenNoiKy: this.editForm.get(['tenNoiKy'])!.value,
+      isActive: this.editForm.get(['isActive'])!.value,
+      path: this.editForm.get(['path'])!.value,
+      ngayKhoa: this.editForm.get(['ngayKhoa'])!.value,
+      ngayTemp: this.editForm.get(['ngayTemp'])!.value,
     };
   }
 

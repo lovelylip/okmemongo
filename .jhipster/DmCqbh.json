@@ -7,6 +7,82 @@
       "fieldName": "ma",
       "fieldType": "String",
       "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "ten",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "diaChi",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "maXa",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "maHuyen",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "maTinh",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "emailAcc",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "phoneNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "activeDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "inactiveDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "maCqbhCha",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nguoiKy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "chucDanh",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tenNoiKy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isActive",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "path",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ngayKhoa",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "ngayTemp",
+      "fieldType": "String"
     }
   ],
   "dto": "mapstruct",

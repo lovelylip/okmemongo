@@ -16,7 +16,26 @@
       "detail": {
         "title": "Dm Cqbh"
       },
-      "ma": "Ma"
+      "ma": "Ma",
+      "ten": "Ten",
+      "diaChi": "Dia Chi",
+      "maXa": "Ma Xa",
+      "maHuyen": "Ma Huyen",
+      "maTinh": "Ma Tinh",
+      "emailAcc": "Email Acc",
+      "phoneNumber": "Phone Number",
+      "status": "Status",
+      "createDate": "Create Date",
+      "activeDate": "Active Date",
+      "inactiveDate": "Inactive Date",
+      "maCqbhCha": "Ma Cqbh Cha",
+      "nguoiKy": "Nguoi Ky",
+      "chucDanh": "Chuc Danh",
+      "tenNoiKy": "Ten Noi Ky",
+      "isActive": "Is Active",
+      "path": "Path",
+      "ngayKhoa": "Ngay Khoa",
+      "ngayTemp": "Ngay Temp"
     }
   }
 }

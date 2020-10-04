@@ -20,7 +20,27 @@ describe('Service Tests', () => {
       service = injector.get(DmDonViService);
       httpMock = injector.get(HttpTestingController);
 
-      elemDefault = new DmDonVi('ID', 'AAAAAAA');
+      elemDefault = new DmDonVi(
+        'ID',
+        'AAAAAAA',
+        'AAAAAAA',
+        0,
+        0,
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA'
+      );
     });
 
     describe('Service methods', () => {
@@ -55,6 +75,23 @@ describe('Service Tests', () => {
         const returnedFromService = Object.assign(
           {
             ma: 'BBBBBB',
+            ten: 'BBBBBB',
+            tongLd: 1,
+            tongLuong: 1,
+            loaiDv: 'BBBBBB',
+            diachi: 'BBBBBB',
+            dienthoai: 'BBBBBB',
+            fax: 'BBBBBB',
+            soTaiKhoan: 'BBBBBB',
+            nganHang: 'BBBBBB',
+            maCqbh: 'BBBBBB',
+            maTinh: 'BBBBBB',
+            maHuyen: 'BBBBBB',
+            soDkkd: 'BBBBBB',
+            maSt: 'BBBBBB',
+            nguoiLh: 'BBBBBB',
+            maDvikcb: 'BBBBBB',
+            maKhoikcb: 'BBBBBB',
           },
           elemDefault
         );
@@ -72,6 +109,23 @@ describe('Service Tests', () => {
         const returnedFromService = Object.assign(
           {
             ma: 'BBBBBB',
+            ten: 'BBBBBB',
+            tongLd: 1,
+            tongLuong: 1,
+            loaiDv: 'BBBBBB',
+            diachi: 'BBBBBB',
+            dienthoai: 'BBBBBB',
+            fax: 'BBBBBB',
+            soTaiKhoan: 'BBBBBB',
+            nganHang: 'BBBBBB',
+            maCqbh: 'BBBBBB',
+            maTinh: 'BBBBBB',
+            maHuyen: 'BBBBBB',
+            soDkkd: 'BBBBBB',
+            maSt: 'BBBBBB',
+            nguoiLh: 'BBBBBB',
+            maDvikcb: 'BBBBBB',
+            maKhoikcb: 'BBBBBB',
           },
           elemDefault
         );

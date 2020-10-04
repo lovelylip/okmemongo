@@ -9,6 +9,74 @@
       "fieldValidateRules": ["required", "unique", "minlength", "maxlength"],
       "fieldValidateRulesMinlength": 0,
       "fieldValidateRulesMaxlength": 20
+    },
+    {
+      "fieldName": "ten",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tongLd",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "tongLuong",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "loaiDv",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "diachi",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dienthoai",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fax",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "soTaiKhoan",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nganHang",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "maCqbh",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "maTinh",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "maHuyen",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "soDkkd",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "maSt",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nguoiLh",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "maDvikcb",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "maKhoikcb",
+      "fieldType": "String"
     }
   ],
   "dto": "mapstruct",

@@ -18,6 +18,23 @@ export class DmDonViUpdateComponent implements OnInit {
   editForm = this.fb.group({
     id: [],
     ma: [null, [Validators.required, Validators.minLength(0), Validators.maxLength(20)]],
+    ten: [],
+    tongLd: [],
+    tongLuong: [],
+    loaiDv: [],
+    diachi: [],
+    dienthoai: [],
+    fax: [],
+    soTaiKhoan: [],
+    nganHang: [],
+    maCqbh: [],
+    maTinh: [],
+    maHuyen: [],
+    soDkkd: [],
+    maSt: [],
+    nguoiLh: [],
+    maDvikcb: [],
+    maKhoikcb: [],
   });
 
   constructor(protected dmDonViService: DmDonViService, protected activatedRoute: ActivatedRoute, private fb: FormBuilder) {}
@@ -32,6 +49,23 @@ export class DmDonViUpdateComponent implements OnInit {
     this.editForm.patchValue({
       id: dmDonVi.id,
       ma: dmDonVi.ma,
+      ten: dmDonVi.ten,
+      tongLd: dmDonVi.tongLd,
+      tongLuong: dmDonVi.tongLuong,
+      loaiDv: dmDonVi.loaiDv,
+      diachi: dmDonVi.diachi,
+      dienthoai: dmDonVi.dienthoai,
+      fax: dmDonVi.fax,
+      soTaiKhoan: dmDonVi.soTaiKhoan,
+      nganHang: dmDonVi.nganHang,
+      maCqbh: dmDonVi.maCqbh,
+      maTinh: dmDonVi.maTinh,
+      maHuyen: dmDonVi.maHuyen,
+      soDkkd: dmDonVi.soDkkd,
+      maSt: dmDonVi.maSt,
+      nguoiLh: dmDonVi.nguoiLh,
+      maDvikcb: dmDonVi.maDvikcb,
+      maKhoikcb: dmDonVi.maKhoikcb,
     });
   }
 
@@ -54,6 +88,23 @@ export class DmDonViUpdateComponent implements OnInit {
       ...new DmDonVi(),
       id: this.editForm.get(['id'])!.value,
       ma: this.editForm.get(['ma'])!.value,
+      ten: this.editForm.get(['ten'])!.value,
+      tongLd: this.editForm.get(['tongLd'])!.value,
+      tongLuong: this.editForm.get(['tongLuong'])!.value,
+      loaiDv: this.editForm.get(['loaiDv'])!.value,
+      diachi: this.editForm.get(['diachi'])!.value,
+      dienthoai: this.editForm.get(['dienthoai'])!.value,
+      fax: this.editForm.get(['fax'])!.value,
+      soTaiKhoan: this.editForm.get(['soTaiKhoan'])!.value,
+      nganHang: this.editForm.get(['nganHang'])!.value,
+      maCqbh: this.editForm.get(['maCqbh'])!.value,
+      maTinh: this.editForm.get(['maTinh'])!.value,
+      maHuyen: this.editForm.get(['maHuyen'])!.value,
+      soDkkd: this.editForm.get(['soDkkd'])!.value,
+      maSt: this.editForm.get(['maSt'])!.value,
+      nguoiLh: this.editForm.get(['nguoiLh'])!.value,
+      maDvikcb: this.editForm.get(['maDvikcb'])!.value,
+      maKhoikcb: this.editForm.get(['maKhoikcb'])!.value,
     };
   }
 

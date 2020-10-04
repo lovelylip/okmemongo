@@ -24,6 +24,23 @@
                 <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
                     <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="ma"><span jhiTranslate="okmeApp.dmDonVi.ma">Ma</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="ten"><span jhiTranslate="okmeApp.dmDonVi.ten">Ten</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="tongLd"><span jhiTranslate="okmeApp.dmDonVi.tongLd">Tong Ld</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="tongLuong"><span jhiTranslate="okmeApp.dmDonVi.tongLuong">Tong Luong</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="loaiDv"><span jhiTranslate="okmeApp.dmDonVi.loaiDv">Loai Dv</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="diachi"><span jhiTranslate="okmeApp.dmDonVi.diachi">Diachi</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dienthoai"><span jhiTranslate="okmeApp.dmDonVi.dienthoai">Dienthoai</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="fax"><span jhiTranslate="okmeApp.dmDonVi.fax">Fax</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="soTaiKhoan"><span jhiTranslate="okmeApp.dmDonVi.soTaiKhoan">So Tai Khoan</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="nganHang"><span jhiTranslate="okmeApp.dmDonVi.nganHang">Ngan Hang</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="maCqbh"><span jhiTranslate="okmeApp.dmDonVi.maCqbh">Ma Cqbh</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="maTinh"><span jhiTranslate="okmeApp.dmDonVi.maTinh">Ma Tinh</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="maHuyen"><span jhiTranslate="okmeApp.dmDonVi.maHuyen">Ma Huyen</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="soDkkd"><span jhiTranslate="okmeApp.dmDonVi.soDkkd">So Dkkd</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="maSt"><span jhiTranslate="okmeApp.dmDonVi.maSt">Ma St</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="nguoiLh"><span jhiTranslate="okmeApp.dmDonVi.nguoiLh">Nguoi Lh</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="maDvikcb"><span jhiTranslate="okmeApp.dmDonVi.maDvikcb">Ma Dvikcb</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="maKhoikcb"><span jhiTranslate="okmeApp.dmDonVi.maKhoikcb">Ma Khoikcb</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"></th>
                 </tr>
             </thead>
@@ -31,6 +48,23 @@
                 <tr *ngFor="let dmDonVi of dmDonVis ;trackBy: trackId">
                     <td><a [routerLink]="['/dm-don-vi', dmDonVi.id, 'view']">{{ dmDonVi.id }}</a></td>
                     <td>{{ dmDonVi.ma }}</td>
+                    <td>{{ dmDonVi.ten }}</td>
+                    <td>{{ dmDonVi.tongLd }}</td>
+                    <td>{{ dmDonVi.tongLuong }}</td>
+                    <td>{{ dmDonVi.loaiDv }}</td>
+                    <td>{{ dmDonVi.diachi }}</td>
+                    <td>{{ dmDonVi.dienthoai }}</td>
+                    <td>{{ dmDonVi.fax }}</td>
+                    <td>{{ dmDonVi.soTaiKhoan }}</td>
+                    <td>{{ dmDonVi.nganHang }}</td>
+                    <td>{{ dmDonVi.maCqbh }}</td>
+                    <td>{{ dmDonVi.maTinh }}</td>
+                    <td>{{ dmDonVi.maHuyen }}</td>
+                    <td>{{ dmDonVi.soDkkd }}</td>
+                    <td>{{ dmDonVi.maSt }}</td>
+                    <td>{{ dmDonVi.nguoiLh }}</td>
+                    <td>{{ dmDonVi.maDvikcb }}</td>
+                    <td>{{ dmDonVi.maKhoikcb }}</td>
                     <td class="text-right">
                         <div class="btn-group">
                             <button type="submit"

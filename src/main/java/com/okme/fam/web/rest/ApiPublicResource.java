@@ -3,20 +3,15 @@ package com.okme.fam.web.rest;
 import com.google.common.base.Strings;
 import com.okme.fam.repository.UserRepository;
 import com.okme.fam.security.jwt.TokenProvider;
-import com.okme.fam.service.MailService;
 import com.okme.fam.service.UserService;
 import com.okme.fam.service.dto.UserDTO;
-import io.github.jhipster.web.util.PaginationUtil;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.http.HttpHeaders;
+import org.springframework.cache.CacheManager;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.session.SessionInformation;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
@@ -25,6 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.List;
+import java.util.Objects;
 
 @RestController
 @RequestMapping("/api/public")
@@ -36,9 +32,12 @@ public class ApiPublicResource {
 
     private final TokenProvider tokenProvider;
 
-    public ApiPublicResource(UserService userService, TokenProvider tokenProvider) {
+    private final CacheManager cacheManager;
+
+    public ApiPublicResource(UserService userService, TokenProvider tokenProvider, CacheManager cacheManager) {
         this.userService = userService;
         this.tokenProvider = tokenProvider;
+        this.cacheManager = cacheManager;
     }
 
     @PostMapping("/findUserByEmail")
@@ -80,9 +79,16 @@ public class ApiPublicResource {
                     cookie.setHttpOnly(true);
                     cookie.setMaxAge(0); // Don't set to -1 or it will become a session cookie!
                     response.addCookie(cookie);
+
+                    Objects.requireNonNull(cacheManager.getCache(UserRepository.USERS_BY_LOGIN_CACHE)).evict(userDTO.getLogin());
+                    if (userDTO.getEmail() != null) {
+                        Objects.requireNonNull(cacheManager.getCache(UserRepository.USERS_BY_EMAIL_CACHE)).evict(userDTO.getEmail());
+                    }
                 }
+
             }
         }
+
         System.out.println(ticket);
     }
 }

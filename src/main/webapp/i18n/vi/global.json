@@ -18,7 +18,8 @@
         "sessions": "Phiên đăng nhập",
         "login": "Đăng nhập",
         "logout": "Đăng xuất",
-        "register": "Đăng ký"
+        "register": "Đăng ký",
+        "requestResetPassword": "Cập nhật mật khẩu"
       },
       "admin": {
         "main": "Quản trị",
