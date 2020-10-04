@@ -62,6 +62,7 @@ export class NavbarComponent implements OnInit {
     this.collapseNavbar();
     this.loginService.logout();
     this.router.navigate(['']);
+    window.location.replace('https://ssotest.baohiemxahoi.gov.vn:8443/logout?');
   }
 
   toggleNavbar(): void {

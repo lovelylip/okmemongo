@@ -3,4 +3,4 @@ services:
   okme-hazelcast-management-center:
     image: hazelcast/management-center:3.12.9
     ports:
-      - 8180:8080
+      - 8180:8888

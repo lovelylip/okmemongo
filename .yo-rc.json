@@ -9,7 +9,7 @@
     "baseName": "okme",
     "packageName": "com.okme.fam",
     "packageFolder": "com/okme/fam",
-    "serverPort": "8080",
+    "serverPort": "8888",
     "authenticationType": "jwt",
     "cacheProvider": "hazelcast",
     "enableHibernateCache": false,

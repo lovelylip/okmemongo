@@ -41,7 +41,7 @@ export class LoginModalComponent implements AfterViewInit {
   }
 
   login(): void {
-    window.location.replace('https://ssotest.baohiemxahoi.gov.vn:8443/login?service=http://tdqt.bhxh.gov.vn:8080/');
+    window.location.replace('https://ssotest.baohiemxahoi.gov.vn:8443/login?service=http://tdqt.bhxh.gov.vn:8888/');
   }
 
   loginBk(): void {
