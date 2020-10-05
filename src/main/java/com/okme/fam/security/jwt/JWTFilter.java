@@ -50,11 +50,14 @@ public class JWTFilter extends GenericFilterBean {
         HttpServletRequest httpServletRequest = (HttpServletRequest) servletRequest;
         HttpServletResponse httpServletResponse = (HttpServletResponse) servletResponse;
         String ticket = httpServletRequest.getParameter("ticket");
+        HttpSession httpSession = httpServletRequest.getSession();
+        String ipHost = applicationProperties.getHttps() + "://" + httpServletRequest.getServerName();
+        if (httpServletRequest.getServerPort() != 80 && httpServletRequest.getServerPort() != 443) {
+            ipHost += ":" + httpServletRequest.getServerPort();
+        }
+
         if(!Strings.isNullOrEmpty(ticket)){
-            String ipHost = applicationProperties.getHttps() + "://" + httpServletRequest.getServerName();
-            if (httpServletRequest.getServerPort() != 80 && httpServletRequest.getServerPort() != 443) {
-                ipHost += ":" + httpServletRequest.getServerPort();
-            }
+            httpSession.setAttribute("ticket", ticket);
             String jwt = tokenProvider.authenByTicketFromCas(ticket, ipHost);
             HttpHeaders httpHeaders = new HttpHeaders();
             httpHeaders.add(JWTFilter.AUTHORIZATION_HEADER, "Bearer " + jwt);
@@ -66,11 +69,18 @@ public class JWTFilter extends GenericFilterBean {
             httpServletResponse.sendRedirect(httpServletRequest.getContextPath() + "/");
         }else {
             String jwt = resolveToken(httpServletRequest);
+            String ticketSession = (String) httpSession.getAttribute("ticket");
             if (StringUtils.hasText(jwt) && this.tokenProvider.validateToken(jwt)) {
                 Authentication authentication = this.tokenProvider.getAuthentication(jwt);
-                SecurityContextHolder.getContext().setAuthentication(authentication);
+                if(authentication == null && Strings.isNullOrEmpty(ticketSession)){
+                    httpServletResponse.sendRedirect(applicationProperties.getUrlSSO() + "/login?service=" + ipHost + "/");
+                }else {
+                    SecurityContextHolder.getContext().setAuthentication(authentication);
+                    filterChain.doFilter(servletRequest, servletResponse);
+                }
+            }else{
+                filterChain.doFilter(servletRequest, servletResponse);
             }
-            filterChain.doFilter(servletRequest, servletResponse);
         }
     }
 

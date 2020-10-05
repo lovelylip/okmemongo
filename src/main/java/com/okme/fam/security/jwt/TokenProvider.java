@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 import javax.annotation.PostConstruct;
 import javax.servlet.http.Cookie;
 
+import com.google.common.base.Strings;
 import com.okme.fam.config.ApplicationProperties;
 import com.okme.fam.repository.UserRepository;
 import com.okme.fam.security.SecurityUtils;
@@ -107,7 +108,8 @@ public class TokenProvider {
             .build()
             .parseClaimsJws(token)
             .getBody();
-
+        String authoritiesKey = String.valueOf(claims.get(AUTHORITIES_KEY));
+        if(Strings.isNullOrEmpty(authoritiesKey)) return null;
         Collection<? extends GrantedAuthority> authorities =
             Arrays.stream(claims.get(AUTHORITIES_KEY).toString().split(","))
                 .map(SimpleGrantedAuthority::new)
